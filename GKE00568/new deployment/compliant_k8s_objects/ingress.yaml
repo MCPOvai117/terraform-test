@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gke00568-managed-cert-ingress
+  namespace: gke00568-compliant-ns
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: gke00568-global-static-ip
+    networking.gke.io/managed-certificates: gke00568-managed-cert
+    kubernetes.io/ingress.class: "gce"
+  labels:
+    app.kubernetes.io/name: nginx
+spec:
+  defaultBackend:
+    service:
+      name: nginx-service
+      port:
+        number: 80

@@ -1,0 +1,23 @@
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: restricted
+spec:
+  privileged: true
+  allowPrivilegeEscalation: true
+  allowedCapabilities: 
+  - AUDIT_WRITE
+  - NET_ADMIN
+  requiredDropCapabilities:
+  - ALL
+  fsGroup:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  hostPID: true
+  hostIPC: true
+  hostNetwork: true

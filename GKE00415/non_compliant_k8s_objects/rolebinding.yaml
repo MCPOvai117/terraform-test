@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: gke00415-non-compliant-default-role-binding
+  namespace: gke00415-non-compliant-ns-1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:discovery
+subjects:
+  - kind: ServiceAccount
+    name: default

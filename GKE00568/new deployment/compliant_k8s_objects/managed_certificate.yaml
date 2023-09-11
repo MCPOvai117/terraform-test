@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: gke00568-managed-cert
+  namespace: gke00568-compliant-ns
+spec:
+  domains:
+    - gke00568.test.com

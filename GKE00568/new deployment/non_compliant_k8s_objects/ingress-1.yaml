@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gke00568-non-compliant-ingress-1
+  namespace: gke00568-non-compliant-ns
+  labels:
+    app.kubernetes.io/name: nginx
+spec:
+  defaultBackend:
+    service:
+      name: nginx-service-2
+      port:
+        number: 80
