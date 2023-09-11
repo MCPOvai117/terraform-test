@@ -42,7 +42,7 @@ data "google_container_engine_versions" "gke00428_k8s_na_version" {
 
 
 resource "google_container_cluster" "gke00428_compliant_cluster" {
-  name     = "gke00428-compliant-cluster"
+  name     = "gke00428-compliant-cluster" #only for compliant resources
   location = var.default_gcp_zone
   network  = google_compute_network.gke00428_network.self_link
 
